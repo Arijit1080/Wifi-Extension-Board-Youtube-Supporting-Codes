@@ -1,0 +1,49 @@
+restore_from_flash: true
+
+
+preferences:
+  flash_write_interval: 0s
+
+# Define relay outputs with inverted logic
+output:
+  - platform: gpio
+    id: relay1
+    pin: GPIO14
+    inverted: true  # Inverted logic
+  - platform: gpio
+    id: relay2
+    pin: GPIO12
+    inverted: true  # Inverted logic
+  - platform: gpio
+    id: relay3
+    pin: GPIO13
+    inverted: true  # Inverted logic
+  - platform: gpio
+    id: relay4
+    pin: GPIO4
+    inverted: true  # Inverted logic
+
+switch:
+  - platform: output
+    id: extension3_relay1_switch
+    name: "Relay 1"
+    output: relay1
+    restore_mode: RESTORE_DEFAULT_OFF
+
+  - platform: output
+    id: extension3_relay2_switch
+    name: "Relay 2"
+    output: relay2
+    restore_mode: RESTORE_DEFAULT_OFF
+
+  - platform: output
+    id: extension3_relay3_switch
+    name: "Relay 3"
+    output: relay3
+    restore_mode: RESTORE_DEFAULT_OFF
+
+  - platform: output
+    id: extension3_relay4_switch
+    name: "Relay 4"
+    output: relay4
+    restore_mode: RESTORE_DEFAULT_OFF
